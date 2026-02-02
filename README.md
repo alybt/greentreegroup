@@ -1,138 +1,114 @@
-5 GitHub Guide: Creating a Repository with Contributors and Requiring Owner Approval for Code Merges 
+# Python Web Scraper
 
-PART 1 Creating a Repository with Contributors and Rules 
+## 📌 Project Description
 
-1. Creating a GitHub Repository 
+This project is a simple **Python web scraper** that extracts data from a public website and saves the collected information into a **CSV file**. It is designed for educational and open-source collaboration purposes.
 
-Go to GitHub and log in. 
+The scraper uses HTTP requests to fetch webpage content and parses the HTML to extract relevant data in a structured format.
 
-Click on the "+" icon in the top right and select "New repository". 
+---
 
-Enter a repository name and select visibility (Public or Private). 
+## 🛠️ Technologies Used
 
-Check "Initialize this repository with a README" (optional). 
+* Python 3.x
+* requests
+* BeautifulSoup (bs4)
+* csv (built-in Python module)
 
-Click "Create repository".  
+---
 
-2. Adding Contributors to the Repository  
+## 📂 Project Structure
 
-Go to your repository and click on the "Settings" tab. 
+```
+project-folder/
+│── scraper.py
+│── requirements.txt
+│── output.csv
+│── README.md
+```
 
-In the left sidebar, click "Collaborators and teams". 
+---
 
-Under "Manage access", click "Invite a collaborator". 
+## ⚙️ Installation Instructions
 
-Enter the GitHub username or email of the contributor. 
+### 1️⃣ Clone the Repository
 
-Click "Add collaborator" and send an invite (people who you want to work with). 
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-The invited contributor must accept the invitation before they can contribute. 
+### 2️⃣ Create a Virtual Environment (Optional but Recommended)
 
-3. Setting Up Branch Protection (Requiring Owner Approval) 
+```bash
+python -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+```
 
-Go to your repository’s "Settings" tab. 
+### 3️⃣ Install Dependencies
 
-Click "Branches" in the left sidebar. 
+```bash
+pip install -r requirements.txt
+```
 
-Under "Branch protection rules", click "Add rule". 
+---
 
-In the "Branch name pattern" field, enter main (or your default branch name). 
+## ▶️ How to Run the Project
 
-Enable the following:  
+Run the scraper using:
 
-"Require a pull request before merging". 
+```bash
+python scraper.py
+```
 
-"Require approvals" (Set required approvals to at least 1). 
+After execution, the extracted data will be saved as `output.csv` in the project directory.
 
-"Require review from code owners" (Ensures only the owner can approve changes). 
+---
 
-(Optional) Require status checks to pass before merging. 
+## 📄 Example Output
 
-Click "Save changes". 
+The generated CSV file will contain structured data such as:
 
-4. Setting Up Code Ownership 
+* Title
+* Price
+* Description
+* URL
 
-To ensure only the repository owner must approve code changes before merging: 
+---
 
-Create a .github/CODEOWNERS file in the root of the repository. 
+## 🧪 Example Code Snippet
 
-Add the following content: * @ greentreegroup / @glynac 
+```python
+import requests
+from bs4 import BeautifulSoup
 
-This makes the repository owner the mandatory reviewer before merging any code. 
+response = requests.get("https://example.com")
+soup = BeautifulSoup(response.text, "html.parser")
 
-   
+print("Scraping completed successfully")
+```
 
-PART 2 Access to Repository and Make Modification 
+---
 
-1. How Contributors Can Access the Repository 
+## 🤝 Contribution Guidelines
 
-Once added as a collaborator: 
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m "Your message"`)
+4. Push to your branch (`git push origin feature-branch`)
+5. Create a Pull Request
 
-The contributor should accept the invitation sent to their GitHub account. 
+All pull requests require **owner approval** before merging.
 
-Clone the repository locally using:  
+---
 
-git clone https://github.com/greentreegroup/glynac.ai-website.git 
-  
+## ⚠️ Disclaimer
 
-Navigate into the project directory:  
+This scraper is intended for **educational purposes only**. Please ensure that scraping the target website complies with its **Terms of Service**.
 
-cd your-repo 
-  
+---
 
-2. How a Contributor Can Push Changes 
+## 📬 Contact
 
-Create a new branch: git checkout -b feature-branch 
-  
-
-Make changes and commit: git add . 
-git commit -m "Added new feature" 
-  
-
-Push to GitHub: git push origin feature-branch 
-  
-
-Create a Pull Request (PR):  
-
-Go to the GitHub repository. 
-
-Click "Pull Requests" → "New pull request". 
-
-Select feature-branch as the source and main as the target. 
-
-Click "Create pull request". 
-
-3. How the Owner Can Review and Merge Code 
-
-Go to "Pull Requests" in the GitHub repository. 
-
-Open the new pull request. 
-
-Review the changes and leave comments if needed. 
-
-Click "Approve". 
-
-Click "Merge pull request" to merge the changes into main. 
-
-(Optional) Delete the feature-branch after merging. 
-
- 
-
-GLYNAC PRIVATE REPO   
-
-4. How to access to the private repo 
-
-1. How to access private access to the repo, Please watch this, https://youtu.be/Lhyu_2iLO8w?si=_hGtwn1Fx6Pp-ith 
-
-2. as an intern you need to create your own branch when push, or you can ask your supervisor which branch to push 
-
-5. file requirement to push the code 
-
-1.	Before you push your code, you need to create a proper documentation and what is the requirement to install and run the code, like you working in the python, you can include requirement.txt or config file  
-
-2. 	Include Proper readme, please follow this link for the structure  
- 
-
-Questions: 
-
-You are working on an open-source Python project hosted on GitHub. The project is a simple web scraper that extracts data from a public website and stores it in a CSV file. You have written the core functionality, but now you need to create a comprehensive README file, how the Readme file look like  
+For questions or suggestions, please contact the repository owner via GitHub.
